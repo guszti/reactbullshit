@@ -17,7 +17,9 @@ const element = (
     <h1>
         {get_data(guy)}
     </h1>
-);*/
+);
+
+///////////////////////////////////////////////////////////////////////////
 
 class Welcome extends React.Component{
     render(){
@@ -34,5 +36,52 @@ function more_names(){
         </div>
     );
 }
+*/
 
-ReactDOM.render(more_names(), document.getElementById('root'));
+///////////////////////////////////////////////////////////////////////////
+
+class Clock extends React.Component{
+    //1.
+    constructor(props){
+        super(props);
+        // this.state can only be used in a constructor
+        this.state = {date: new Date()};
+    }
+
+    //3.
+    //lifecycle method
+    //runs after the component output has been rendered to the DOM
+    componentDidMount(){
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+
+    //lifecycle method
+    // stops the counter if the component
+    // is removed from the dom
+    componentWillUnmount(){
+        clearInterval(this.timerID);
+    }
+
+    //4. then setState calls render again that contains a different
+    //   this.state.date and updates it
+    tick(){
+        this.setState({
+            date: new Date()
+        });
+    }
+
+    //2.
+    render(){
+        return(
+             <p>{ this.state.date.toLocaleTimeString() }</p>
+        );
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+
+ReactDOM.render(<Clock />, document.getElementById('root'));
