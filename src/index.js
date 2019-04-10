@@ -76,7 +76,33 @@ class Clock extends React.Component{
     //2.
     render(){
         return(
-             <p>{ this.state.date.toLocaleTimeString() }</p>
+             <p style={{backgroundColor:'teal'}}>{ this.state.date.toLocaleTimeString() }</p>
+        );
+    }
+}
+
+class Content extends React.Component{
+    render(){
+        return(
+            <div style={{textAlign:'center',backgroundColor:'grey'}}>
+                <h1 style={{color:'green'}}>The title</h1>
+                <p>
+                    fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa<br></br>
+                    khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf<br></br>
+                    fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa<br></br>
+                    khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf<br></br>
+                    fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa<br></br>
+                    khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf<br></br>
+                    fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa<br></br>
+                    khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf<br></br>
+                    fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa<br></br>
+                    khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf<br></br>
+                    fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa<br></br>
+                    khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf<br></br>
+                </p>
+                <hr></hr>
+                <Clock />
+            </div>           
         );
     }
 }
@@ -84,4 +110,4 @@ class Clock extends React.Component{
 ///////////////////////////////////////////////////////////////////////////
 
 
-ReactDOM.render(<Clock />, document.getElementById('root'));
+ReactDOM.render(<Content />, document.getElementById('root'));
