@@ -1,5 +1,5 @@
 .App {
-  font-family: cursive;
+  font-family: arial;
   background-color: aquamarine;
   margin-left: 15%;
   margin-right: 15%;
@@ -7,6 +7,7 @@
 
 .App-header {
   color: coral;
+  background-color: aqua;
   text-align: center;
 }
 
