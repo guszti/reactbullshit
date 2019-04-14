@@ -36,6 +36,7 @@ function more_names(){
 */
 
 ///////////////////////////////////////////////////////////////////////////
+
 class App_header extends React.Component{
     render(){
         return(
@@ -45,6 +46,7 @@ class App_header extends React.Component{
         );
     }
 }
+
 class Clock extends React.Component{
   //1.
   constructor(props){
@@ -86,6 +88,30 @@ class Clock extends React.Component{
   }
 }
 
+class Click_count extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {count: 0};
+        this.add_click = this.add_click.bind(this);
+    }
+
+    add_click(){
+        this.setState({
+            count: this.state.count + 1
+        });
+    }
+
+    render(){
+        return(
+            <div>
+                <p>{this.state.count}</p>
+                <button onClick={this.add_click}>click this shit</button>
+            </div>
+        );
+    };
+}
+
 class App extends Component {
   render() {
     return(
@@ -121,6 +147,7 @@ class App extends Component {
                 fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
                 khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
                 </p>
+                <Click_count />
                 <hr></hr>
                 <Clock />
             </div>

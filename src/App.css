@@ -3,6 +3,7 @@
   background-color: aquamarine;
   margin-left: 15%;
   margin-right: 15%;
+  text-align: center;
  }
 
 .App-header {
@@ -17,7 +18,6 @@
 
 .App-clock {
   background-color: lightblue;
-  text-align: center;
 }
 
 * {
