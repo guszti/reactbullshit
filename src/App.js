@@ -37,7 +37,7 @@ function more_names(){
 
 ///////////////////////////////////////////////////////////////////////////
 
-class App_header extends React.Component{
+class AppHeader extends React.Component{
     render(){
         return(
             <div className='App-header'>
@@ -88,7 +88,7 @@ class Clock extends React.Component{
   }
 }
 
-class Click_count extends React.Component{
+class ClickCount extends React.Component{
     constructor(props){
         super(props);
 
@@ -120,37 +120,82 @@ class Click_count extends React.Component{
     };
 }
 
+function ContentMain(){
+    return(
+        <div>
+            <p className='App-content'>
+            What Are We Building?<br></br>
+            In this tutorial, we’ll show how to build an interactive tic-tac-toe game with React.
+            You can see what we’ll be building here: Final Result. If the code doesn’t make sense to you, 
+            or if you are unfamiliar with the code’s syntax, don’t worry! The goal of this tutorial is to 
+            help you understand React and its syntax.
+            We recommend that you check out the tic-tac-toe game before continuing with the tutorial. 
+            One of the features that you’ll notice is that there is a numbered list to the right of 
+            the game’s board. This list gives you a history of all of the moves that have occurred in 
+            the game, and is updated as the game progresses.
+            You can close the tic-tac-toe game once you’re familiar with it. We’ll be starting from a 
+            simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+            </p>
+            <p className='App-content'>
+            Prerequisites<br></br>
+            We’ll assume that you have some familiarity with HTML and JavaScript, but you should be able to 
+            follow along even if you’re coming from a different programming language. We’ll also assume that 
+            you’re familiar with programming concepts like functions, objects, arrays, and to a lesser extent, 
+            classes.
+            If you need to review JavaScript, we recommend reading this guide. Note that we’re also using some 
+            features from ES6 — a recent version of JavaScript. In this tutorial, we’re using arrow functions, 
+            classes, let, and const statements. You can use the Babel REPL to check what ES6 code compiles to.
+            </p>
+        </div>
+    );
+}
+
+function ContentAbout(){
+    return(
+        <h1 className='App-content'>About</h1>
+    );
+}
+
+class ContentControl extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {isok: true};
+        this.changer = this.changer.bind(this);
+    }
+
+    changer(){
+        this.setState({
+            isok: !this.state.isok
+        });
+    }
+
+    render(){
+        let content;
+        if(this.state.isok){
+            content = <ContentMain />;
+        } else {
+            content = <ContentAbout />;
+        }
+        return(
+            <div>
+                {content}
+                <div className='App-switch'>
+                    <button onClick={this.changer}>change content</button>
+                </div>
+            </div>
+        );
+    }
+}
+
 class App extends Component {
   render() {
     return(
-        <div>
-            <App_header />
+        <div className='App'>
+            <AppHeader />
             <hr></hr>
-            <div className='App'>
-                <p className='App-content'>
-                What Are We Building?<br></br>
-                In this tutorial, we’ll show how to build an interactive tic-tac-toe game with React.
-                You can see what we’ll be building here: Final Result. If the code doesn’t make sense to you, 
-                or if you are unfamiliar with the code’s syntax, don’t worry! The goal of this tutorial is to 
-                help you understand React and its syntax.
-                We recommend that you check out the tic-tac-toe game before continuing with the tutorial. 
-                One of the features that you’ll notice is that there is a numbered list to the right of 
-                the game’s board. This list gives you a history of all of the moves that have occurred in 
-                the game, and is updated as the game progresses.
-                You can close the tic-tac-toe game once you’re familiar with it. We’ll be starting from a 
-                simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
-                </p>
-                <p className='App-content'>
-                Prerequisites<br></br>
-                We’ll assume that you have some familiarity with HTML and JavaScript, but you should be able to 
-                follow along even if you’re coming from a different programming language. We’ll also assume that 
-                you’re familiar with programming concepts like functions, objects, arrays, and to a lesser extent, 
-                classes.
-                If you need to review JavaScript, we recommend reading this guide. Note that we’re also using some 
-                features from ES6 — a recent version of JavaScript. In this tutorial, we’re using arrow functions, 
-                classes, let, and const statements. You can use the Babel REPL to check what ES6 code compiles to.
-                </p>
-                <Click_count />
+            <div>
+                <ContentControl />
+                <ClickCount />
                 <hr></hr>
                 <Clock />
             </div>
