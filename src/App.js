@@ -94,6 +94,7 @@ class Click_count extends React.Component{
 
         this.state = {count: 0};
         this.add_click = this.add_click.bind(this);
+        this.remove_click = this.remove_click.bind(this);
     }
 
     add_click(){
@@ -102,11 +103,18 @@ class Click_count extends React.Component{
         });
     }
 
+    remove_click(){
+        this.setState({
+            count: this.state.count - 1
+        });
+    }
+
     render(){
         return(
-            <div>
+            <div className='App-counters'>
                 <p>{this.state.count}</p>
-                <button onClick={this.add_click}>click this shit</button>
+                <button style={{fontSize: 50}} onClick={this.add_click}>+</button>
+                <button style={{fontSize: 50}} onClick={this.remove_click}>-</button>
             </div>
         );
     };
@@ -120,32 +128,27 @@ class App extends Component {
             <hr></hr>
             <div className='App'>
                 <p className='App-content'>
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
+                What Are We Building?<br></br>
+                In this tutorial, we’ll show how to build an interactive tic-tac-toe game with React.
+                You can see what we’ll be building here: Final Result. If the code doesn’t make sense to you, 
+                or if you are unfamiliar with the code’s syntax, don’t worry! The goal of this tutorial is to 
+                help you understand React and its syntax.
+                We recommend that you check out the tic-tac-toe game before continuing with the tutorial. 
+                One of the features that you’ll notice is that there is a numbered list to the right of 
+                the game’s board. This list gives you a history of all of the moves that have occurred in 
+                the game, and is updated as the game progresses.
+                You can close the tic-tac-toe game once you’re familiar with it. We’ll be starting from a 
+                simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
                 </p>
                 <p className='App-content'>
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
-                fds fjdis jjd dij fdsj fdioj fdj dsf jdfijds ofjds ofdsj fiodsj fsijdof io jfodsa
-                khsd hfkds fkjdsfkj oivfdv fniofailkdsjfdsjfkdjfdslkjfkdshfkudshfudshfkdshfkhdkjf
+                Prerequisites<br></br>
+                We’ll assume that you have some familiarity with HTML and JavaScript, but you should be able to 
+                follow along even if you’re coming from a different programming language. We’ll also assume that 
+                you’re familiar with programming concepts like functions, objects, arrays, and to a lesser extent, 
+                classes.
+                If you need to review JavaScript, we recommend reading this guide. Note that we’re also using some 
+                features from ES6 — a recent version of JavaScript. In this tutorial, we’re using arrow functions, 
+                classes, let, and const statements. You can use the Babel REPL to check what ES6 code compiles to.
                 </p>
                 <Click_count />
                 <hr></hr>
