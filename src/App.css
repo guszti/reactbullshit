@@ -29,6 +29,10 @@
   text-align: center;
 }
 
+.App-name{
+  text-align: center;
+}
+
 * {
   margin: 0;
   padding: 0;
