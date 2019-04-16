@@ -9,7 +9,6 @@
   color: coral;
   background-color: aqua;
   text-align: center;
-  text-align: center;
 }
 
 .App-content {
@@ -23,6 +22,7 @@
 
 .App-counters{
   text-align: center;
+  font-size: 50px;
 }
 
 .App-switch{
@@ -30,6 +30,10 @@
 }
 
 .App-name{
+  text-align: center;
+}
+
+.App-btn{
   text-align: center;
 }
 

@@ -227,6 +227,60 @@ class NameForm extends React.Component {
     }
 }
 
+class Btn extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e){
+        this.props.handleClick();
+    }
+
+    render(){
+        return(
+            <div>
+                <button onClick={this.handleChange} style={{fontSize: 50}}>click hyeeer</button>
+            </div>
+        );
+    }
+
+}
+
+class BtnControl extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {ison: true}
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(){
+        this.setState({
+            ison: !this.state.ison
+        });
+    }
+
+    render(){
+
+        let t;
+
+        if(this.state.ison === true){
+            t = 'ON';
+        } else {
+            t = 'OFF';
+        }
+
+        return(
+            <div className='App-btn'>
+                <button style={{fontSize: 30}}>{t}</button>
+                <Btn handleClick={this.handleClick} />
+            </div>
+        );
+    }
+}
+
 class App extends Component {
   render() {
     return(
@@ -239,6 +293,8 @@ class App extends Component {
                 <ClickCount />
                 <br></br>
                 <NameForm />
+                <br></br>
+                <BtnControl />
                 <br></br>
                 <hr></hr>
                 <Clock />
