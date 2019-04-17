@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import RouteControl from './routes/RouteControl'
+
 /*const guy = {
     name: 'mr. guy',
     age: '8'
@@ -295,6 +297,8 @@ class App extends Component {
                 <NameForm />
                 <br></br>
                 <BtnControl />
+                <br></br>
+                <RouteControl />
                 <br></br>
                 <hr></hr>
                 <Clock />
