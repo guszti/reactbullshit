@@ -1,9 +1,16 @@
-export type Song = {
-    title: string;
-    duration: string;
+export type StoreState = {
+    posts: Post[],
+    users: User[]
 };
 
-export type StoreState = {
-    songs: Song[];
-    selectedSong: Song;
+export type Post = {
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+};
+
+export type User = {
+    id: number;
+    name: string;
 };
