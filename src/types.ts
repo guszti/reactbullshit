@@ -1,16 +1,15 @@
 export type StoreState = {
-    posts: Post[],
-    users: User[]
+    auth: Auth;
+    streams: Stream[];
 };
 
-export type Post = {
-    userId: number;
-    id: number;
+export type Auth = {
+    isSignedIn: boolean | null;
+    userId: number | null;
+};
+
+export type Stream = {
     title: string;
-    body: string;
-};
-
-export type User = {
+    description: string;
     id: number;
-    name: string;
 };
