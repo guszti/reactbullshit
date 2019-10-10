@@ -1,6 +1,6 @@
 export type StoreState = {
     auth: Auth;
-    streams: Stream[];
+    streams: StreamList;
 };
 
 export type Auth = {
@@ -12,4 +12,9 @@ export type Stream = {
     title: string;
     description: string;
     id: number;
+    userId: number;
+};
+
+export type StreamList = {
+    [key: string]: Stream;
 };
